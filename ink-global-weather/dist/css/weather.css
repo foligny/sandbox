@@ -1,0 +1,172 @@
+
+body {
+  font-family:sans-serif;
+  color:#fff;
+  font-weight:bold;
+  font-size:14pt;
+  text-shadow:0 -2px 0 #374683;
+  text-rendering:optimizeLegibility;
+  background-color:#006EA0;
+  background-image:-moz-radial-gradient( 50% 30% 90deg, circle, #006EA0 0%, #304160 600px);
+  background-image:-webkit-gradient(radial, 50% 30%, 0, 50% 30%, 600, from(#006EA0), to(#304160));
+  -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorstr=#006EA0, endColorstr=#304160)";
+  background-attachment: fixed;
+  min-width:600px;
+  
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@media only screen and (min-width: 1100px)
+{
+	body { font-size:16pt; }
+}
+@media only screen and (min-width: 1200px)
+{
+	body { font-size:18pt; }
+}
+a, a:visited
+{	color:#15335c;
+}
+h1 {
+  text-align: center;
+  font-size: 1.8em;
+}
+h2 {
+  font-size: 1.2em;
+  text-align: center
+}
+h3 {
+  font-size: 1.125em;
+  text-align: center
+}
+#header {
+  position:absolute;
+  left:0px;
+  top:1px;
+  right:5px;
+  font-size:11pt;
+  font-weight:normal;
+  text-shadow:none;
+  text-align:right;
+}
+#header a, #header a:visited {
+  color:#e1e1e1;
+}
+div#doc {
+  margin:0 1em 0 1em;
+  width:100%;
+}
+label {
+  font-size:0.625em;
+}
+div.city {
+  float:left;
+  font-size:0.875em;
+  width:12em;
+  min-height:9em;
+  margin-right:1em;
+  margin-top:1em;
+  padding:0.2em 0.5em 0.5em 0.5em;
+  background-color:#8f8f8f;
+  -moz-border-radius:12px;
+  -webkit-border-radius:12px;
+  border-radius:12px;
+  border:1px solid #8f8f8f;
+  cursor:pointer;
+  text-align:center;
+}
+div.city:hover {
+  border:1px solid White;
+  background-color:#afafaf;
+}
+div.city.fadeOut {
+  opacity:0;
+}
+div.city.marginAlignCenter { margin:0 auto; display:inline-block; float:none; }
+div.listContainer {
+  text-align:center;
+}
+select, button {
+  height:1.9em;
+}
+table {
+  width:100%;
+}
+table div.iconList {
+  position:relative;
+  display:inline-block;
+  width:1px; height:1px;
+  top:-30px;
+}
+table div.iconList div {
+  position:absolute; top:0; left:0;
+  white-space:nowrap;
+}
+td.label {
+  white-space:nowrap;
+  text-align:right;
+  padding-right:1em;
+}
+.btn
+{
+  text-decoration: none; 
+  background:#dfdfdf;
+  background:-webkit-gradient(linear,left top,left bottom,color-stop(#dfdfdf,0),color-stop(#a9a9a9,1));
+  background:-webkit-linear-gradient(top, #dfdfdf 0%, #a9a9a9 100%);
+  background:-moz-linear-gradient(top, #dfdfdf 0%, #a9a9a9 100%);
+  background:-o-linear-gradient(top, #dfdfdf 0%, #a9a9a9 100%);
+  background:linear-gradient(top, #dfdfdf 0%, #a9a9a9 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#dfdfdf', endColorstr='#a9a9a9',GradientType=0 );
+  border:1px solid #a9a9a9;
+  -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 1px rgba(188,188,188,0.2);
+     -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 1px rgba(188,188,188,0.2);
+          box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2), 0px 0px 0px 1px rgba(188,188,188,0.2);
+  -webkit-border-radius:7px;
+  -moz-border-radius:7px;
+  border-radius:7px;
+}
+.btn:hover, .btn.active{
+  -webkit-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+     -moz-box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+          box-shadow:0px 1px 1px rgba(255,255,255,0.8) inset, 1px 1px 3px rgba(0,0,0,0.2);
+}
+.btn:active {
+  position:relative;
+  top:1px;
+  background:#a9a9a9;
+  -webkit-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
+     -moz-box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
+          box-shadow:1px 1px 2px rgba(0,0,0,0.4) inset;
+  border-color:#898989;
+  outline:0;
+}
+.btn span.text {
+  padding-top:0px;
+  display:block;
+  font-size:1.325em;
+  white-space:nowrap;
+  text-shadow:0px 1px 1px rgba(255,255,255,0.8);
+  color:#202020;
+  -webkit-transition:all 0.2s linear;
+  -moz-transition:all 0.2s linear; 
+  -o-transition:all 0.2s linear;
+  transition:all 0.2s linear;
+}
+@media screen and (orientation:landscape) and (max-height:321px)
+{
+	
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+	body { font-size:29pt; }
+	label {
+	  font-size:1em;
+	}
+	button, input, select, textarea {
+		font-size:100%;
+	}
+	#viewList button { margin-bottom:1em; }
+}

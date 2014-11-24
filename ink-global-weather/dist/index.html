@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="en"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+	<title>Ink Global Weather</title>
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/weather.css">
+	<link rel="shortcut icon" href="favicon.ico" />
+</head>
+<body>
+
+<div id="header" class="floatRight">
+ <a href="doc/index.html">Documentation</a> | <a href="qunit.html">Unit tests</a>
+</div>
+
+<div id="debug" class="hidden">
+ <span class="width"></span> x <span class="height"></span>
+</div>
+
+<div id="doc">
+	<h1>Weather of Selected Cities</h1>
+	<section id="settings" class="">
+		<h2></h2>
+		<label id="sortBy">Sort by <select id="sortMethod">
+			<option value="name">City Name</option>
+			<option value="temp">Temperature (ascending)</option>
+			<option value="rtemp">Temperature (descending)</option>
+			</select>
+		</label>
+		<label id="viewList" class="hidden">
+			<button class="btn"><span class="text">Back to list</span></button>
+			<br/>
+		</label>
+	</section>
+	
+
+	<div id="city-list">
+		
+	</div>
+
+	<div class="clearBoth"></div>
+
+	<div id="fullDisplayArea" class="hidden">
+		<h3 data-target="name" class="hidden"></h3>
+		<br/>
+		<table>
+			<tr>
+				<td class="label">Latitude / Longitude</td><td><span data-target="coord.lat"></span> / <span data-target="coord.lon"></span> (<span data-template="tmplViewOnMap"></span>)</td>
+			</tr>
+			<tr>
+				<td class="label">Weather conditions</td><td><span data-target="weatherDescription"></span>
+					<div class="iconList"><div data-template="tmplIcons"></div></div>
+				</td>
+			</tr>
+			<tr>
+				<td class="label">Temperature</td><td><span data-target="temp"></span>°C</td>
+			</tr>
+			<tr>
+				<td class="label">Temperature range</td><td><span data-target="temp_min"></span> - <span data-target="temp_max"></span>°C</td>
+			</tr>
+			<tr>
+				<td class="label">Atmospheric pressure</td><td><span data-target="pressure"></span> hPa</td>
+			</tr>
+			<tr>
+				<td class="label">Humidity</td><td><span data-target="humidity"></span> %</td>
+			</tr>
+		</table>
+	</div>
+
+</div>
+
+<div id="footer"></div>
+
+
+<script id="tmplCity" type="text/template">
+<div class="city niceBorder transition500ms" cityId="%%id%%">
+	<h3>%%name%%</h3>
+	<div class="loading %%if(city.weather!=null)%% hidden %%endif%%"><img src="img/loading-64x64.gif" alt="loading"/></div>
+	%%if(city.weather!=null)%%
+		<div class="data">
+			<span>%%temp%%°C</span>
+			<div class="icon"><img src="http://openweathermap.org/img/w/%%weather[0].icon%%.png" width="50" 	height="50" alt="%%weather[0].description%%" title="%%weather[0].description%%"/></div>
+		</div>
+	%%endif%%
+</div>
+</script>
+
+<script id="tmplIcon" type="text/template">
+<img src="http://openweathermap.org/img/w/%%weather[0].icon%%.png" width="50" height="50" alt="%%weather[0].description%%" title="%%weather[0].description%%"/>
+</script>
+
+<script id="tmplIcons" type="text/template">
+%%loop(weather)%%
+<img src="http://openweathermap.org/img/w/%%icon%%.png" width="50" height="50" alt="%%description%%" title="%%description%%"/>
+%%end%%
+</script>
+
+<script id="tmplViewOnMap" type="text/template">
+<a href="https://www.google.com/maps/@%%coord.lat%%,%%coord.lon%%,12z"  target="_blank">view map</a>
+</script>
+
+
+</body>
+<script data-main="js/main" src="js/lib/require.js"></script>
+</html>

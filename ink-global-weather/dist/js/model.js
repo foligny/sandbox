@@ -1,0 +1,1 @@
+define(["require"],function(e){function t(e){this.id=0;if(e!=null)for(var t in e){var n=e[t];this[t]=n}}return t.prototype={Load:function(){return null},Save:function(){return!1}},t});

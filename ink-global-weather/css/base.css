@@ -1,0 +1,166 @@
+/* base.css - Common reusable CSS components not specific to the rock-paper-scissor game */
+/* Written by Francois Oligny-Lemieux 31.Oct.2014 */
+
+.floatRight { float:right; }
+.hidden { display:none; }
+.clearBoth { clear:both; }
+.textAlignCenter { text-align:center; }
+.margin0 { margin:0; }
+.marginAlignCenter, div.marginAlignCenter { margin:0 auto; display:inline-block; float:none; }
+
+.scroll-y {
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;/*for iPad*/
+}
+
+html, body{
+    margin:0;
+    padding:0;
+}
+/* for IE if content does not take full height but our background should */
+/* not for other browser : it would add scrollbars */
+html.ie {
+  height: 100%;
+}
+.ie body {
+  min-height: 100%;
+}
+
+div, section {
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+          box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;  
+  margin: 0;
+
+  -webkit-box-sizing: border-box; /* For legacy WebKit based browsers */
+     -moz-box-sizing: border-box; /* For all Gecko based browsers */
+          box-sizing: border-box;
+}
+input {
+    height: 2.5em; /* for IE */
+    vertical-align: middle; /* This is optional but it makes legacy IEs look better */
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin-top:-2px; 
+  margin-bottom: -2px; 
+}
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0;
+}
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  margin:0; padding:0;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #AE3E43;
+}
+::selection {
+  color: #fff;
+  background: #AE3E43;
+}
+
+.transparent50 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";  /* IE 8 */ 
+  filter: alpha(opacity=50); /* IE 5-7 */  
+  -moz-opacity: 0.5;/* Netscape */  
+  -khtml-opacity: 0.5;/* Safari 1.x */
+  opacity: 0.5;
+}
+
+.transition1s {
+  -moz-transition:all 1s linear;
+  -o-transition:all 1s linear;
+  -webkit-transition:all 1s;
+  transition:all 1s;
+  transition-timing-function:linear linear linear;
+}
+.transition500ms {
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  -webkit-transition:all 0.5s;
+  transition:all 0.5s;
+  transition-timing-function:linear linear linear;
+}
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Weather Station Test</title>
+<link rel="stylesheet" href="browserref.css">
+<style>
+#header {
+  position:absolute;
+  top:1px;
+  right:5px;
+  font-family:Arial;
+  font-size:11pt;
+  font-weight:normal;
+  text-shadow:none;
+}
+#header a, #header a:visited {
+  color:#5e5e5e;
+}
+</style>
+</head>
+<body>
+
+<div id="header" class="floatRight">
+ <a href="../index.html">Back to weather</a> | <a href="../qunit.html">Unit tests</a>
+</div>
+<h1>Weather Station Test</h1>
+
+<section id="content">
+<h2>Installation / Usage</h2>
+<ul>
+<li>There is no specific server-side installation required.</li>
+<li>You can run the files from your local drive or from any HTTP server.</li>
+<li>The whole app is pure Javascript/HTML.</li>
+<li>It requires an internet connection to access the weather API</li>
+<li>To generate a release build, you need node.js to run r.js (the optimizer) with buid/app.build.js:<br>
+<pre>cd js
+node lib/r.js -o ../build/app.build.js</pre></li>
+</ul>
+<h2>Implementation notes</h2>
+<ul>
+<li>Since this was a programming test I didn't use jQuery or any other framework (except RequireJS).</li>
+<li>Unit tests are done with QUnit and <a href="../qunit.html">can be accessed here</a>.</li>
+<li>It supports multiple weather data per location in the full view: it will render the list of icons</li>
+<li>To support IE7, I would have to write a querySelector() failover or use jQuery</li>
+</ul>
+<h2>Possible improvements</h2>
+<ul>
+<li>Support IE7</li>
+<li>More fine-tuning for specific mobile phones</li>
+</ul>
+
+<h2>Browser Support</h2>
+<table class="browserref notranslate">
+  <tr>
+    <th style="width:20%;font-size:16px;text-align:left;"></th>
+    <th style="width:16%;" class="bsChrome" title="Chrome"></th>
+    <th style="width:16%;" class="bsIE" title="Internet Explorer"></th>
+    <th style="width:16%;" class="bsFirefox" title="Firefox"></th>
+    <th style="width:16%;" class="bsSafari" title="Safari"></th>
+    <th style="width:16%;" class="bsOpera" title="Opera"></th>   
+  </tr>
+  <tr>
+    <td style="text-align:left; width: 20%;">Usability</td>
+    <td>all</td><!-- chrome -->
+    <td>8.0</td><!-- IE -->
+    <td>3.5</td><!-- firefox -->
+    <td>4</td><!-- safari -->
+    <td>9.6</td><!-- opera -->
+  </tr>
+</table>
+</section>
+
+<br/>
+<div id="footer">
+<br/>
+<a href="../index.html">Back to the weather!</a>
+</div>
+</body>
+</html>
+
+
+<br>

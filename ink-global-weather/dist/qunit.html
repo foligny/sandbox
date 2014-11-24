@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>QUnit basic tests</title>
+<link rel="stylesheet" href="qunit-1.15.0.css">
+</head>
+<body>
+<div id="qunit"></div>
+
+<div id="qunit-fixture">
+	
+	<span id="testEl">inner</span>
+	<span class="jsBindMultiple">yep</span>
+	<span class="jsBindMultiple">yep</span>
+	<span class="jsBindMultiple">yep</span>
+
+	<label>Sort by <select id="sortMethod">
+		<option value="name">City Name</option>
+		<option value="temp">Temperature (ascending)</option>
+		<option value="rtemp">Temperature (descending)</option>
+		</select>
+	</label>
+	<label id="viewList" class="hidden">
+		<button class="btn"><span class="text">Back to list</span></button>
+	</label>
+
+	<div id="doc">
+		<div id="city-list"></div>
+		<div id="fullDisplayArea" class="hidden">
+			<h3 data-target="name" class="hidden"></h3>
+			<br/>
+			<table>
+				<tr>
+					<td class="label">Latitude / Longitude</td><td><span data-target="coord.lat" id="coord.lat"></span> / <span data-target="coord.lon"></span> (<span data-template="tmplViewOnMap"></span>)</td>
+				</tr>
+				<tr>
+					<td class="label">Weather conditions</td><td><span data-target="weatherDescription"></span>
+						<div class="iconList"><div data-template="tmplIcons"></div></div>
+					</td>
+				</tr>
+				<tr>
+					<td class="label">Temperature</td><td><span data-target="temp"></span>°C</td>
+				</tr>
+				<tr>
+					<td class="label">Temperature range</td><td><span data-target="temp_min"></span> - <span data-target="temp_max"></span>°C</td>
+				</tr>
+				<tr>
+					<td class="label">Atmospheric pressure</td><td><span data-target="pressure"></span> hPa</td>
+				</tr>
+				<tr>
+					<td class="label">Humidity</td><td><span data-target="humidity"></span> %</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	
+	<script id="tmplCity" type="text/template">
+	<div class="city niceBorder transition500ms" cityId="%%id%%">
+		<h3>%%name%%</h3>
+		<div class="loading %%if(city.weather!=null)%% hidden %%endif%%"><img src="img/loading-64x64.gif" alt="loading"/></div>
+		<div class="data %%if(city.weather==null)%% hidden %%endif%%">
+			<span>%%temp%%°C</span>
+			<div class="icon"><img src="http://openweathermap.org/img/w/%%weather[0].icon%%.png" width="50" 	height="50" alt="%%weather[0].description%%" title="%%weather[0].description%%"/></div>
+		</div>
+	</div>
+	</script>
+	
+	<script id="tmplIcon" type="text/template">
+	<img src="http://openweathermap.org/img/w/%%weather[0].icon%%.png" width="50" height="50" alt="%%weather[0].description%%" title="%%weather[0].description%%"/>
+	</script>
+	
+	<script id="tmplIcons" type="text/template">
+	%%loop(weather)%%
+	<img src="http://openweathermap.org/img/w/%%icon%%.png" width="50" height="50" alt="%%description%%" title="%%description%%"/>
+	%%end%%
+	</script>
+	
+	<script id="tmplViewOnMap" type="text/template">
+	<a href="https://www.google.com/maps/@%%coord.lat%%,%%coord.lon%%,12z"  target="_blank">view on map</a>
+	</script>
+
+</div>
+
+<script data-main="js/qunit-runner" src="js/lib/require-uncompressed.js"></script>
+<div id="footer">
+<br/>
+<a href="./index.html">Back to weather</a>
+</div>
+</body>
+</html>

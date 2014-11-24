@@ -1,0 +1,1 @@
+require.config({paths:{QUnit:["../qunit-1.15.0"]},shim:{QUnit:{exports:"QUnit",init:function(){QUnit.config.autoload=!1,QUnit.config.autostart=!1}}}}),require(["QUnit","tests/controller","tests/city","tests/weather-source-api","tests/toolbox"],function(e,t,n,r,i){n.run(),r.run(),t.run(),i.run(),e.load(),e.start()});

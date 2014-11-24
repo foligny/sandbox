@@ -1,0 +1,113 @@
+
+.floatRight { float:right; }
+.hidden { display:none; }
+.clearBoth { clear:both; }
+.textAlignCenter { text-align:center; }
+.margin0 { margin:0; }
+.marginAlignCenter, div.marginAlignCenter { margin:0 auto; display:inline-block; float:none; }
+.scroll-y {
+  overflow-y: scroll; 
+  -webkit-overflow-scrolling: touch;
+}
+html, body{
+    margin:0;
+    padding:0;
+}
+html.ie {
+  height: 100%;
+}
+.ie body {
+  min-height: 100%;
+}
+div, section {
+  -webkit-box-sizing: border-box; 
+     -moz-box-sizing: border-box;    
+          box-sizing: border-box;         
+}
+button, input, select, textarea {
+  font-family : inherit;
+  font-size   : 100%;  
+  margin: 0;
+  -webkit-box-sizing: border-box; 
+     -moz-box-sizing: border-box; 
+          box-sizing: border-box;
+}
+input {
+    height: 2.5em; 
+    vertical-align: middle; 
+}
+button,
+html input[type="button"], 
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; 
+  cursor: pointer; 
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+  margin-top:-2px; 
+  margin-bottom: -2px; 
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; 
+  padding: 0; 
+}
+input[type="search"] {
+  -webkit-appearance: textfield; 
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; 
+  box-sizing: content-box;
+}
+img {
+  border: 0;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+body {
+  margin:0; padding:0;
+}
+::-moz-selection {
+  color: #fff;
+  background: #AE3E43;
+}
+::selection {
+  color: #fff;
+  background: #AE3E43;
+}
+.transparent50 {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";   
+  filter: alpha(opacity=50);   
+  -moz-opacity: 0.5;  
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+.transition1s {
+  -moz-transition:all 1s linear;
+  -o-transition:all 1s linear;
+  -webkit-transition:all 1s;
+  transition:all 1s;
+  transition-timing-function:linear linear linear;
+}
+.transition500ms {
+  -moz-transition:all 0.5s linear;
+  -o-transition:all 0.5s linear;
+  -webkit-transition:all 0.5s;
+  transition:all 0.5s;
+  transition-timing-function:linear linear linear;
+}
